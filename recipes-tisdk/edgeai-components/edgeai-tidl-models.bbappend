@@ -23,13 +23,15 @@ do_fetch() {
 
     VERSION="${SRCREV}"
 
+    # The upstream recipe downloads this helper script dynamically during do_fetch.
     wget https://raw.githubusercontent.com/TexasInstruments/edgeai-gst-apps/${VERSION}/download_models.sh
     chmod +x ./download_models.sh
 
+    # Run the model downloader against the newer model zoo version required locally.
     export SOC="${SOC}"
     export EDGEAI_SDK_VERSION=11_00_04_00
     ./download_models.sh --recommended
 
-    # Restore the stock value so later tasks don't inherit the override.
+    # Restore the original value so later tasks do not inherit the temporary override.
     export EDGEAI_SDK_VERSION=11_00_00
 }
