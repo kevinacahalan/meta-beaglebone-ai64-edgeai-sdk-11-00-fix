@@ -14,7 +14,7 @@
 bootpart=1:2
 fdtfile=ti/k3-j721e-beagleboneai64.dtb
 
-# Apply the TI EdgeAI overlay (built by meta-bbai64-custom's linux-bb.org
+# Apply the TI EdgeAI overlay (built by meta-beaglebone-ai64-edgeai-sdk-11-00-fix's linux-bb.org
 # bbappend). It puts the main R5F clusters in split mode and replaces the
 # remote-core reserved-memory map with TI's vision-apps layout so the
 # j7-*-fw firmware loads (fixes "bad phdr"/-22 remoteproc failures).

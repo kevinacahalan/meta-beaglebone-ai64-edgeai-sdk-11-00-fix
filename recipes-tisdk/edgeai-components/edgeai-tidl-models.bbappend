@@ -1,4 +1,4 @@
-# edgeai-tidl-models.bbappend  (meta-bbai64-custom)
+# edgeai-tidl-models.bbappend  (meta-beaglebone-ai64-edgeai-sdk-11-00-fix)
 #
 # Ported verbatim from the WORKING j721e-sk fix:
 #   https://github.com/kevinacahalan/meta-j721e-sk-edgeai-sdk-11-00-fix
