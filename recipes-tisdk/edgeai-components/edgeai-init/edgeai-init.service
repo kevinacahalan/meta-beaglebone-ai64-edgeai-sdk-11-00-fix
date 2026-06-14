@@ -1,0 +1,19 @@
+[Unit]
+Description=EdgeAI OOB demos
+After=emptty.service
+Wants=emptty.service
+
+[Service]
+Type=forking
+Restart=no
+TimeoutSec=60
+IgnoreSIGPIPE=no
+KillMode=process
+GuessMainPID=no
+ExecStartPre=-/etc/init.d/edgeai-launcher.sh kill_emptty
+ExecStart=/etc/init.d/edgeai-launcher.sh start
+ExecStopPost=/etc/init.d/edgeai-launcher.sh stop
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
